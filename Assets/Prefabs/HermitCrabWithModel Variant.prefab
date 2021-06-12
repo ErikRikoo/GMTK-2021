@@ -134,7 +134,12 @@ PrefabInstance:
     - target: {fileID: 2476919163814694884, guid: 9fbaf99c831908a43ac993d39cf4862a,
         type: 3}
       propertyPath: m_Radius
-      value: 0.5
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2476919163814694884, guid: 9fbaf99c831908a43ac993d39cf4862a,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 2476919163814694885, guid: 9fbaf99c831908a43ac993d39cf4862a,
         type: 3}
@@ -215,6 +220,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Radius
       value: 1.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454611400683562456, guid: 9fbaf99c831908a43ac993d39cf4862a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fbaf99c831908a43ac993d39cf4862a, type: 3}
