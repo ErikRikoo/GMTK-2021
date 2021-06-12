@@ -1,48 +1,49 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using Pathfinding.Poly2Tri;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CharacterMovement : MonoBehaviour
+namespace Character
 {
-    [SerializeField] private float m_Speed;
+    public class CharacterMovement : MonoBehaviour
+    {
+        [SerializeField] private float m_Speed;
 
-    private Coroutine m_MovementCoroutine;
+        private Coroutine m_MovementCoroutine;
     
-    public void OnMovement(InputAction.CallbackContext input)
-    {
-        if (input.phase == InputActionPhase.Started)
+        public void OnMovement(InputAction.CallbackContext input)
         {
-            if (m_MovementCoroutine != null)
+            if (input.phase == InputActionPhase.Started)
             {
-                StopCoroutine(m_MovementCoroutine);
-            }
-            m_MovementCoroutine = StartCoroutine(MovementRoutine(input));
-        } else if (input.phase == InputActionPhase.Canceled)
-        {
-            if (m_MovementCoroutine != null)
+                if (m_MovementCoroutine != null)
+                {
+                    StopCoroutine(m_MovementCoroutine);
+                }
+                m_MovementCoroutine = StartCoroutine(MovementRoutine(input));
+            } else if (input.phase == InputActionPhase.Canceled)
             {
-                StopCoroutine(m_MovementCoroutine);
+                if (m_MovementCoroutine != null)
+                {
+                    StopCoroutine(m_MovementCoroutine);
+                }
             }
         }
-    }
 
-    private IEnumerator MovementRoutine(InputAction.CallbackContext input)
-    {
-        while (true)
+        private IEnumerator MovementRoutine(InputAction.CallbackContext input)
         {
-            Move(input.ReadValue<Vector2>());
-            yield return null;
+            while (true)
+            {
+                Move(input.ReadValue<Vector2>());
+                yield return null;
+            }
         }
-    }
 
-    private void Move(Vector2 movement)
-    {
-        movement *= m_Speed * Time.deltaTime;
-        Vector3 newPos = transform.localPosition;
-        newPos.x += movement.x;
-        newPos.z += movement.y;
-        transform.localPosition = newPos;
+        private void Move(Vector2 movement)
+        {
+            movement *= m_Speed * Time.deltaTime;
+            Vector3 newPos = transform.localPosition;
+            newPos.x += movement.x;
+            newPos.z += movement.y;
+            transform.localPosition = newPos;
+        }
     }
 }
