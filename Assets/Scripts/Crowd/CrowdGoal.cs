@@ -25,4 +25,12 @@ public class CrowdGoal : MonoBehaviour
             entity.HasReachedGoal = true;
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.TryGetComponent(out CrowdEntity entity))
+        {
+            entity.HasReachedGoal = false;
+        }
+    }
 }

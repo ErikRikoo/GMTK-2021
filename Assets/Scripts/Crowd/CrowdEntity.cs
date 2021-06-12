@@ -16,11 +16,12 @@ public class CrowdEntity : MonoBehaviour
     
     private Pathfinding.IAstarAI m_AstarAI;
 
-    private bool m_HasReachedGoal = true;
     private int _animatorWalkingHash;
     private int _animatorWalkOffsetHash;
     private Rigidbody m_Rigidbody;
     
+    [SerializeField]
+    private bool m_HasReachedGoal = false;
     public bool HasReachedGoal
     {
         get => m_HasReachedGoal;
@@ -30,7 +31,7 @@ public class CrowdEntity : MonoBehaviour
             OnHasReachedGoalChanged();
         }
     }
-
+    
     private void OnHasReachedGoalChanged()
     {
         m_AstarAI.canMove = !HasReachedGoal;
@@ -56,11 +57,16 @@ public class CrowdEntity : MonoBehaviour
         m_AstarAI = GetComponent<IAstarAI>();
         
         UpdateTriggerCollider();
-        
-        m_Goal.Changed.Register(OnGoalChanged);
+        if (m_Goal != null)
+        {
+            m_Goal.Changed.Register(OnGoalChanged);
+        }
         OnGoalChanged(m_Goal.Value);
+        HasReachedGoal = false;
 
         _animator.SetFloat(_animatorWalkOffsetHash, Random.value);
+        _animator.SetBool(_animatorWalkingHash, true);
+
     }
 
     private void UpdateTriggerCollider()
@@ -81,24 +87,28 @@ public class CrowdEntity : MonoBehaviour
 
     private void OnGoalChanged(Vector2 newValue)
     {
-        HasReachedGoal = false;
         m_AstarAI.destination = new Vector3(newValue.x, 0, newValue.y);
-        _animator.SetBool(_animatorWalkingHash, true);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (HasReachedGoal)
+        if (!HasReachedGoal)
         {
             return;
         }
         if (other.TryGetComponent(out CrowdEntity entity))
         {
-            if (entity.HasReachedGoal)
-            {
-                HasReachedGoal = true;
-            }
+            entity.HasReachedGoal = true;
         }
-        
+    }
+
+    public void FollowTarget(Vector2Variable goalVariable)
+    {
+        if (m_Goal != null)
+        {
+            m_Goal.Changed.Unregister(OnGoalChanged);
+        }
+        m_Goal = goalVariable;
+        m_Goal.Changed.Register(OnGoalChanged);
     }
 }
