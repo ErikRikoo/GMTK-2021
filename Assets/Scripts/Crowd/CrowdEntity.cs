@@ -108,6 +108,18 @@ public class CrowdEntity : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (!HasReachedGoal)
+        {
+            return;
+        }
+        if (other.TryGetComponent(out CrowdEntity entity))
+        {
+            HasReachedGoal = false;
+        }
+    }
+
     public void FollowTarget(Vector2Variable goalVariable)
     {
         if (m_Goal == goalVariable)
