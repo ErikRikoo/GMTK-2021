@@ -9,11 +9,13 @@ public class CrowdEntity : MonoBehaviour
 {
     [SerializeField] private Vector2Variable m_Goal;
     [SerializeField] private float m_AvoidanceDistance;
+    [SerializeField] private Animator _animator;
     
     
     private Pathfinding.IAstarAI m_AstarAI;
 
     private bool m_HasReachedGoal = true;
+    private int _animatorWalkingHash;
 
     [SerializeField]
     private SphereCollider m_TriggerCollider;
@@ -31,6 +33,7 @@ public class CrowdEntity : MonoBehaviour
     private void OnHasReachedGoalChanged()
     {
         m_AstarAI.canMove = !HasReachedGoal;
+        _animator.SetBool(_animatorWalkingHash, !HasReachedGoal);
     }
 
     private void Awake()
@@ -39,6 +42,7 @@ public class CrowdEntity : MonoBehaviour
         UpdateTriggerCollider();
         m_Goal.Changed.Register(OnGoalChanged);
         OnGoalChanged(m_Goal.Value);
+        _animatorWalkingHash = Animator.StringToHash("walking");
     }
 
     private void UpdateTriggerCollider()
@@ -61,6 +65,7 @@ public class CrowdEntity : MonoBehaviour
     {
         HasReachedGoal = false;
         m_AstarAI.destination = new Vector3(newValue.x, 0, newValue.y);
+        _animator.SetBool(_animatorWalkingHash, true);
     }
 
     private void OnTriggerEnter(Collider other)
