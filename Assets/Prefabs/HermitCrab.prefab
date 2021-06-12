@@ -154,7 +154,7 @@ MonoBehaviour:
   enableRotation: 1
   targetCompatibility: {fileID: 0}
   acceleration: 5
-  rotationSpeed: 360
+  rotationSpeed: 180
   slowdownTime: 0.5
   endReachedDistance: 0.01
   wallForce: 3
@@ -192,6 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Goal: {fileID: 11400000, guid: 403f6d3c016c93e4c8d95ec0af014afc, type: 2}
   m_AvoidanceDistance: 0.6
+  _animator: {fileID: 0}
   m_TriggerCollider: {fileID: 5454611400683562456}
 --- !u!135 &5454611400683562456
 SphereCollider:
