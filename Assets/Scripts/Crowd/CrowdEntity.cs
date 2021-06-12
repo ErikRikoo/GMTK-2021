@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Pathfinding;
+using UnityAtoms;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -11,8 +12,9 @@ public class CrowdEntity : MonoBehaviour
     [SerializeField] private Vector2Variable m_Goal;
     [SerializeField] private float m_AvoidanceDistance;
     [SerializeField] private Animator _animator;
-    [SerializeField]
-    private SphereCollider m_TriggerCollider;
+    [SerializeField] private SphereCollider m_TriggerCollider;
+    
+    [SerializeField] private bool m_HasReachedGoal = false;
     
     private Pathfinding.IAstarAI m_AstarAI;
 
@@ -20,13 +22,16 @@ public class CrowdEntity : MonoBehaviour
     private int _animatorWalkOffsetHash;
     private Rigidbody m_Rigidbody;
     
-    [SerializeField]
-    private bool m_HasReachedGoal = false;
+
     public bool HasReachedGoal
     {
         get => m_HasReachedGoal;
         set
         {
+            if (m_Goal == null)
+            {
+                return;
+            }
             m_HasReachedGoal = value;
             OnHasReachedGoalChanged();
         }
@@ -36,7 +41,7 @@ public class CrowdEntity : MonoBehaviour
     {
         m_AstarAI.canMove = !HasReachedGoal;
         _animator.SetBool(_animatorWalkingHash, !HasReachedGoal);
-        m_TriggerCollider.enabled = HasReachedGoal;
+        //m_TriggerCollider.enabled = HasReachedGoal;
         
         if (HasReachedGoal)
         {
@@ -50,6 +55,7 @@ public class CrowdEntity : MonoBehaviour
 
     private void Awake()
     {
+        m_GoalChangedListener = new GoalCHangedListener(this);
         _animatorWalkingHash = Animator.StringToHash("walking");
         _animatorWalkOffsetHash = Animator.StringToHash("WalkCycleOffset");
         
@@ -59,14 +65,9 @@ public class CrowdEntity : MonoBehaviour
         UpdateTriggerCollider();
         if (m_Goal != null)
         {
-            m_Goal.Changed.Register(OnGoalChanged);
+            RegisterGoalMovement();
         }
-        OnGoalChanged(m_Goal.Value);
-        HasReachedGoal = false;
-
         _animator.SetFloat(_animatorWalkOffsetHash, Random.value);
-        _animator.SetBool(_animatorWalkingHash, true);
-
     }
 
     private void UpdateTriggerCollider()
@@ -104,11 +105,54 @@ public class CrowdEntity : MonoBehaviour
 
     public void FollowTarget(Vector2Variable goalVariable)
     {
+        if (m_Goal == goalVariable)
+        {
+            return;
+        }
+        
         if (m_Goal != null)
         {
             m_Goal.Changed.Unregister(OnGoalChanged);
         }
         m_Goal = goalVariable;
-        m_Goal.Changed.Register(OnGoalChanged);
+        RegisterGoalMovement();
+    }
+
+    public void RemoveTarget(Vector2Variable oldTarget)
+    {
+        if (m_Goal == oldTarget)
+        {
+            UnregisterGoalMovement();
+            m_Goal = null;
+        }
+    }
+
+    private GoalCHangedListener m_GoalChangedListener;
+    private void RegisterGoalMovement()
+    {
+        m_Goal.Changed.RegisterListener(m_GoalChangedListener);
+        m_GoalChangedListener.OnEventRaised(m_Goal.Value);
+        HasReachedGoal = false;
+    }
+
+    private void UnregisterGoalMovement()
+    {
+        m_Goal.Changed.UnregisterListener(m_GoalChangedListener);
+        HasReachedGoal = true;
+    }
+
+    private class GoalCHangedListener : IAtomListener<Vector2>
+    {
+        private CrowdEntity motherInstance;
+
+        public GoalCHangedListener(CrowdEntity motherInstance)
+        {
+            this.motherInstance = motherInstance;
+        }
+
+        public void OnEventRaised(Vector2 newPos)
+        {
+            motherInstance.OnGoalChanged(newPos);
+        }
     }
 }
