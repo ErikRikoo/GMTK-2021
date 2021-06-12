@@ -4,21 +4,22 @@ using System.Collections.Generic;
 using Pathfinding;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CrowdEntity : MonoBehaviour
 {
     [SerializeField] private Vector2Variable m_Goal;
     [SerializeField] private float m_AvoidanceDistance;
     [SerializeField] private Animator _animator;
-    
+    [SerializeField]
+    private SphereCollider m_TriggerCollider;
     
     private Pathfinding.IAstarAI m_AstarAI;
 
     private bool m_HasReachedGoal = true;
     private int _animatorWalkingHash;
-
-    [SerializeField]
-    private SphereCollider m_TriggerCollider;
+    private int _animatorWalkOffsetHash;
+    private Rigidbody m_Rigidbody;
     
     public bool HasReachedGoal
     {
@@ -34,15 +35,32 @@ public class CrowdEntity : MonoBehaviour
     {
         m_AstarAI.canMove = !HasReachedGoal;
         _animator.SetBool(_animatorWalkingHash, !HasReachedGoal);
+        m_TriggerCollider.enabled = HasReachedGoal;
+        
+        if (HasReachedGoal)
+        {
+            m_Rigidbody.constraints |= RigidbodyConstraints.FreezeRotationY;
+        }
+        else
+        {
+            m_Rigidbody.constraints ^= RigidbodyConstraints.FreezeRotationY;
+        }
     }
 
     private void Awake()
     {
+        _animatorWalkingHash = Animator.StringToHash("walking");
+        _animatorWalkOffsetHash = Animator.StringToHash("WalkCycleOffset");
+        
+        m_Rigidbody = GetComponent<Rigidbody>();
         m_AstarAI = GetComponent<IAstarAI>();
+        
         UpdateTriggerCollider();
+        
         m_Goal.Changed.Register(OnGoalChanged);
         OnGoalChanged(m_Goal.Value);
-        _animatorWalkingHash = Animator.StringToHash("walking");
+
+        _animator.SetFloat(_animatorWalkOffsetHash, Random.value);
     }
 
     private void UpdateTriggerCollider()

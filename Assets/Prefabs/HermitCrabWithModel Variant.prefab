@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!135 &1998870878
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 109883271854734141}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &649928957
 Animator:
   serializedVersion: 3
@@ -139,6 +126,16 @@ PrefabInstance:
       propertyPath: _animator
       value: 
       objectReference: {fileID: 649928957}
+    - target: {fileID: 2476919163814694883, guid: 9fbaf99c831908a43ac993d39cf4862a,
+        type: 3}
+      propertyPath: m_AvoidanceDistance
+      value: 1.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 2476919163814694884, guid: 9fbaf99c831908a43ac993d39cf4862a,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2476919163814694885, guid: 9fbaf99c831908a43ac993d39cf4862a,
         type: 3}
       propertyPath: m_Enabled
@@ -212,16 +209,15 @@ PrefabInstance:
     - target: {fileID: 2476919163814694891, guid: 9fbaf99c831908a43ac993d39cf4862a,
         type: 3}
       propertyPath: m_Name
-      value: HermitCrabWithModel
+      value: HermitCrabWithModel Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454611400683562456, guid: 9fbaf99c831908a43ac993d39cf4862a,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1.24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fbaf99c831908a43ac993d39cf4862a, type: 3}
---- !u!1 &109883271854734141 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2476919163814694891, guid: 9fbaf99c831908a43ac993d39cf4862a,
-    type: 3}
-  m_PrefabInstance: {fileID: 2583283447613158614}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &109883271854734142 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2476919163814694888, guid: 9fbaf99c831908a43ac993d39cf4862a,
