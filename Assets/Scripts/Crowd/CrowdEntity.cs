@@ -39,9 +39,8 @@ public class CrowdEntity : MonoBehaviour
     
     private void OnHasReachedGoalChanged()
     {
-        m_AstarAI.canMove = !HasReachedGoal;
-        _animator.SetBool(_animatorWalkingHash, !HasReachedGoal);
-        //m_TriggerCollider.enabled = HasReachedGoal;
+        ChangeMovementState(!HasReachedGoal);
+        m_TriggerCollider.enabled = HasReachedGoal;
         
         if (HasReachedGoal)
         {
@@ -51,6 +50,12 @@ public class CrowdEntity : MonoBehaviour
         {
             m_Rigidbody.constraints ^= RigidbodyConstraints.FreezeRotationY;
         }
+    }
+
+    private void ChangeMovementState(bool IsMoving)
+    {
+        m_AstarAI.canMove = IsMoving;
+        _animator.SetBool(_animatorWalkingHash, IsMoving);
     }
 
     private void Awake()
@@ -123,6 +128,7 @@ public class CrowdEntity : MonoBehaviour
         if (m_Goal == oldTarget)
         {
             UnregisterGoalMovement();
+            ChangeMovementState(false);
             m_Goal = null;
         }
     }
@@ -138,7 +144,6 @@ public class CrowdEntity : MonoBehaviour
     private void UnregisterGoalMovement()
     {
         m_Goal.Changed.UnregisterListener(m_GoalChangedListener);
-        HasReachedGoal = true;
     }
 
     private class GoalCHangedListener : IAtomListener<Vector2>
