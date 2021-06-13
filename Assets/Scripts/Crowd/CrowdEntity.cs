@@ -14,6 +14,8 @@ public class CrowdEntity : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private SphereCollider m_TriggerCollider;
     [SerializeField] private GameObjectValueList m_crowd;
+    [SerializeField] private CrowdEntityList m_FollowingList;
+    
     
     [SerializeField] private bool m_HasReachedGoal = false;
     
@@ -174,5 +176,13 @@ public class CrowdEntity : MonoBehaviour
         {
             motherInstance.OnGoalChanged(newPos);
         }
+    }
+
+    public void Die()
+    {
+        _animator.SetBool("die", true);
+        m_AstarAI.canMove = false;
+        m_FollowingList?.List.RemoveAll(element => element == this);
+        Destroy(gameObject, 3.0f);
     }
 }
