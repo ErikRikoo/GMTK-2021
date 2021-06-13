@@ -14,16 +14,20 @@ namespace UnityTemplateProjects.Triggerable.Action
         private void Awake()
         {
             m_OpenHash = Animator.StringToHash("open");
+            StartCoroutine(c_Foo());
+        }
+
+        private IEnumerator c_Foo()
+        {
+            yield return new WaitForSeconds(1.5f);
+            GetComponent<Collider>().enabled = true;
         }
 
         public override void OnOpen()
         {
             animator.SetBool(m_OpenHash, true);
 
-            if (GetComponentInChildren<NavmeshCut>(true) != null)
-            {
-                GetComponentInChildren<NavmeshCut>(true).enabled = true;   
-            }
+            GetComponent<Collider>().enabled = false;
         }
     }
 }
