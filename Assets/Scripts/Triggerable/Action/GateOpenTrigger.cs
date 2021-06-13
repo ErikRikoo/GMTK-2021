@@ -14,13 +14,6 @@ namespace UnityTemplateProjects.Triggerable.Action
         private void Awake()
         {
             m_OpenHash = Animator.StringToHash("open");
-            StartCoroutine(c_Foo());
-        }
-
-        private IEnumerator c_Foo()
-        {
-            yield return new WaitForSeconds(1.5f);
-            GetComponent<Collider>().enabled = true;
         }
 
         public override void OnOpen()

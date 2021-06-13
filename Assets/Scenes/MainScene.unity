@@ -3800,6 +3800,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2714186579312095097, guid: 21a4c1f7ed0c49e4c999196fc2ced5f1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3079521983790821201, guid: 21a4c1f7ed0c49e4c999196fc2ced5f1,
         type: 3}
       propertyPath: m_Name
@@ -13175,6 +13180,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 18e9eba0e78a79646b30e1ab19c04db9,
         type: 2}
     - target: {fileID: 805074536249148670, guid: c4f771fa559eed84986d0656f517573f,
+        type: 3}
+      propertyPath: m_RequiredCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1715071382975212616, guid: c4f771fa559eed84986d0656f517573f,
         type: 3}
       propertyPath: m_RequiredCount
       value: 2

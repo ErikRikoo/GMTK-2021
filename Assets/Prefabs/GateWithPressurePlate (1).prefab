@@ -107,6 +107,19 @@ MonoBehaviour:
   m_TriggerableInstance: {fileID: 647190591979895800}
   m_FilterSo: {fileID: 11400000, guid: 72e594935c233be4d838b439a0952312, type: 2}
   m_RequiredCount: 2
+--- !u!65 &3456468533874451127
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6545046534144987297}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12137115, y: 2.4642556, z: 5.8782997}
+  m_Center: {x: 0, y: 0, z: 2.9391499}
 --- !u!1001 &312542998126325895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -260,6 +273,12 @@ GameObject:
 --- !u!4 &265880356373127490 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 620559693029494136, guid: e1071e3e0292e574b8c56ec51e59bf8a,
+    type: 3}
+  m_PrefabInstance: {fileID: 805074535373941818}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6545046534144987297 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5906644784603217051, guid: e1071e3e0292e574b8c56ec51e59bf8a,
     type: 3}
   m_PrefabInstance: {fileID: 805074535373941818}
   m_PrefabAsset: {fileID: 0}
