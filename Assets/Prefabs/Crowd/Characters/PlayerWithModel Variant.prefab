@@ -14356,6 +14356,22 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &1476250560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7131364957829147739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b2530f427b567d4fb6da4a7f3ed6eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _crowd: {fileID: 11400000, guid: 8c58eff9bcd727c48b07a1fb9d45c021, type: 2}
+  _areaCollider: {fileID: 7131364958090430266}
+  _linePrefab: {fileID: 1369194502148091794, guid: e011ea692665d564f80e259b7448b47c,
+    type: 3}
 --- !u!1001 &3332608982285386985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14363,6 +14379,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4396878355921519846, guid: 8aa2b8f969d67724daaf0f4a670a0fcd,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5532809113688778930, guid: 8aa2b8f969d67724daaf0f4a670a0fcd,
         type: 3}
       propertyPath: m_Name
@@ -14448,11 +14469,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5532809113945474003, guid: 8aa2b8f969d67724daaf0f4a670a0fcd,
+        type: 3}
+      propertyPath: m_Radius
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8aa2b8f969d67724daaf0f4a670a0fcd, type: 3}
+--- !u!1 &7131364957829147739 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5532809113688778930, guid: 8aa2b8f969d67724daaf0f4a670a0fcd,
+    type: 3}
+  m_PrefabInstance: {fileID: 3332608982285386985}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7131364957829147728 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5532809113688778937, guid: 8aa2b8f969d67724daaf0f4a670a0fcd,
+    type: 3}
+  m_PrefabInstance: {fileID: 3332608982285386985}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &7131364958090430266 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 5532809113945474003, guid: 8aa2b8f969d67724daaf0f4a670a0fcd,
     type: 3}
   m_PrefabInstance: {fileID: 3332608982285386985}
   m_PrefabAsset: {fileID: 0}

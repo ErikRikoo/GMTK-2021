@@ -225,6 +225,7 @@ MonoBehaviour:
   m_AvoidanceDistance: 0.6
   _animator: {fileID: 0}
   m_TriggerCollider: {fileID: 4230149107492274262}
+  m_crowd: {fileID: 11400000, guid: 8c58eff9bcd727c48b07a1fb9d45c021, type: 2}
   m_HasReachedGoal: 0
 --- !u!135 &4230149107492274262
 SphereCollider:
