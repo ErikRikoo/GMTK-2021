@@ -4,6 +4,6 @@ namespace ForceApplier
 {
     public interface IForceApply
     {
-        void ApplyForce(GameObject origin, GameObject target);
+        void ApplyForce(Collider origin, GameObject target);
     }
 }
