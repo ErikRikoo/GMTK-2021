@@ -12,7 +12,7 @@ namespace Crowd.CrowdExternalInteraction.CrowdGather
         
         public override void InteractWithEntity(CrowdEntity entity)
         {
-            m_Storage.List.RemoveAll(element => element == entity);
+            m_Storage?.List.RemoveAll(element => element == entity);
             m_Storage?.Add(entity);
             entity.FollowTarget(m_GoalVariable);
         }
