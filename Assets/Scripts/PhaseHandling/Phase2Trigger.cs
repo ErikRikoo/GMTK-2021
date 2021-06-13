@@ -13,7 +13,7 @@ namespace UnityTemplateProjects.PhaseHandling
         [SerializeField] private CrowdEntityList m_FollowingList;
         [SerializeField] private Vector2Variable m_NewGoal;
         [SerializeField] private FloatVariable m_SpeedVariable;
-        [SerializeField] private FloatConstant m_NewSpeedConstant;
+        [SerializeField] private FloatConstant m_Multiplier;
 
 
         private void Awake()
@@ -23,6 +23,7 @@ namespace UnityTemplateProjects.PhaseHandling
 
         private void StartPhase()
         {
+            m_SpeedVariable.Value *= m_Multiplier.Value;
             foreach (var entity in m_FollowingList.List)
             {
                 entity.FollowTarget(m_NewGoal);
