@@ -132,7 +132,7 @@ public class CrowdEntity : MonoBehaviour
         
         if (m_Goal != null)
         {
-            m_Goal.Changed.Unregister(OnGoalChanged);
+            UnregisterGoalMovement();
         }
         m_Goal = goalVariable;
         RegisterGoalMovement();

@@ -7,7 +7,10 @@ namespace Crowd.CrowdExternalInteraction.CrowdGather
     {
         private void OnTriggerEnter(Collider other)
         {
-            InteractWithEntityIfPossible(other.gameObject);
+            if (isActiveAndEnabled)
+            {
+                InteractWithEntityIfPossible(other.gameObject);
+            }
         }
     }
 }

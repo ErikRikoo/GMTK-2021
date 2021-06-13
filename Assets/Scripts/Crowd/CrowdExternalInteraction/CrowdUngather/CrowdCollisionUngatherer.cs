@@ -7,7 +7,10 @@ namespace Crowd.CrowdExternalInteraction.CrowdUngather
     {
         private void OnTriggerExit(Collider other)
         {
-            InteractWithEntityIfPossible(other.gameObject);
+            if (isActiveAndEnabled)
+            {
+                InteractWithEntityIfPossible(other.gameObject);
+            }
         }
     }
 }

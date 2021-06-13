@@ -8,6 +8,17 @@ public class CrowdGoal : MonoBehaviour
 {
     [SerializeField] private Vector2Variable m_Variable;
 
+    [SerializeField]
+    private bool m_ShouldTrigger = true;
+
+    public bool ShouldTrigger
+    {
+        get => m_ShouldTrigger;
+        set {
+            m_ShouldTrigger = value;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -20,6 +31,11 @@ public class CrowdGoal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!ShouldTrigger)
+        {
+            return;
+        }
+        
         if (other.gameObject.TryGetComponent(out CrowdEntity entity))
         {
             entity.HasReachedGoal = true;
