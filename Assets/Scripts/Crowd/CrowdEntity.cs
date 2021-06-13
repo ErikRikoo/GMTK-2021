@@ -185,4 +185,10 @@ public class CrowdEntity : MonoBehaviour
         m_FollowingList?.List.RemoveAll(element => element == this);
         Destroy(gameObject, 3.0f);
     }
+
+    public void Win()
+    {
+        _animator.SetBool("dance", true);
+        Destroy(gameObject, 3.0f);
+    }
 }

@@ -16,9 +16,9 @@ namespace UnityTemplateProjects.PhaseHandling
         
         public override void InteractWithEntity(CrowdEntity entity)
         {
-            entity.gameObject.SetActive(false);
+            entity.Win();
             ++m_TriggerCount;
-
+            
             if (m_TriggerCount >= m_FollowingList.Count)
             {
                 m_EndGame?.Raise();
