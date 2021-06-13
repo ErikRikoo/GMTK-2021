@@ -9,17 +9,11 @@ namespace UnityTemplateProjects.Camera
         [SerializeField] private Transform m_Target;
         [SerializeField] private float m_MovementSpeed;
 
-        [SerializeField] private bool m_LookAtOnAwake;
         [SerializeField] private Transform m_LookAtTarget;
         
-
         private void Awake()
         {
             transform.position = m_Target.position;
-            if (m_LookAtOnAwake)
-            {
-                transform.LookAt(m_LookAtTarget.position, transform.forward);
-            }
         }
 
         void LateUpdate()
@@ -33,6 +27,7 @@ namespace UnityTemplateProjects.Camera
             
             Vector3 nextPosition = Vector3.LerpUnclamped(transform.position, goal, m_MovementSpeed);
             transform.position = nextPosition;
+            transform.LookAt(m_LookAtTarget.position, Vector3.forward);
         }
     }
 }
