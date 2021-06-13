@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Goal: {fileID: 11400000, guid: 403f6d3c016c93e4c8d95ec0af014afc, type: 2}
-  m_AvoidanceDistance: 0.6
+  m_AvoidanceDistance: 1.2
   _animator: {fileID: 0}
   m_TriggerCollider: {fileID: 4230149107492274262}
   m_crowd: {fileID: 11400000, guid: 8c58eff9bcd727c48b07a1fb9d45c021, type: 2}
@@ -239,7 +239,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 1.2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7593833382241110997
 MonoBehaviour:

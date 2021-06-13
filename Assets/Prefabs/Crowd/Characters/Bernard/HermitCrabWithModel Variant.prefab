@@ -155,7 +155,7 @@ PrefabInstance:
     - target: {fileID: 2476919163814694883, guid: 9fbaf99c831908a43ac993d39cf4862a,
         type: 3}
       propertyPath: m_AvoidanceDistance
-      value: 0.5
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 2476919163814694884, guid: 9fbaf99c831908a43ac993d39cf4862a,
         type: 3}
@@ -240,12 +240,12 @@ PrefabInstance:
     - target: {fileID: 2476919163814694891, guid: 9fbaf99c831908a43ac993d39cf4862a,
         type: 3}
       propertyPath: m_Name
-      value: HermitCrabWithModel (4)
+      value: HermitCrabWithModel Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4230149107492274262, guid: 9fbaf99c831908a43ac993d39cf4862a,
         type: 3}
       propertyPath: m_Radius
-      value: 0.5
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 5454611400683562456, guid: 9fbaf99c831908a43ac993d39cf4862a,
         type: 3}

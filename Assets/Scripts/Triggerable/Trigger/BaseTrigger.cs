@@ -46,6 +46,8 @@ namespace UnityTemplateProjects.Triggerable
                 TryGetTriggerableFromGO(component.gameObject);
                 return;
             }
+            
+            Debug.LogError("Can't cast to ITriggerable", this);
         }
 
         private bool TryCastTo<T>(Object instance, out T ret)

@@ -6,13 +6,13 @@ namespace Character
 {
     public class CharacterLook : MonoBehaviour
     {
-        private Camera m_MainCamera;
+        private UnityEngine.Camera m_MainCamera;
         
         private Plane m_GroundPlane = new Plane(Vector3.up, 0.0f);
 
         private void Awake()
         {
-            m_MainCamera = Camera.main;
+            m_MainCamera = UnityEngine.Camera.main;
         }
 
         private void Update()
