@@ -21,6 +21,9 @@ namespace UnityTemplateProjects.Timer
         [Header("Config")]
         [SerializeField] private float m_RefreshRate;
 
+        [SerializeField] private bool m_StartOnAwake;
+        
+
         private Coroutine m_TimerCoroutine;
         
 
@@ -29,6 +32,10 @@ namespace UnityTemplateProjects.Timer
             m_StartTimer.Register(StartTimer);
             m_OnTimerPaused.Register(PauseTimer);
             m_OnTimerResumed.Register(ResumeTimer);
+            if (m_StartOnAwake)
+            {
+                StartTimer(m_MaxTime.Value);
+            }
         }
 
         private void PauseTimer()

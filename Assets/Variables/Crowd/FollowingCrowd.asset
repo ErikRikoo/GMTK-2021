@@ -9,7 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee8f9617ee0040cb8e39a9c930923179, type: 3}
-  m_Name: DebugTriggerable
+  m_Script: {fileID: 11500000, guid: 80eb5a44c10e78342a953c908f827d3b, type: 3}
+  m_Name: FollowingCrowd
   m_EditorClassIdentifier: 
-  m_Message: GO GO GO Power Ranger
+  _developerDescription: 
+  Cleared: {fileID: 0}
+  _startCleared: 1
+  list:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
