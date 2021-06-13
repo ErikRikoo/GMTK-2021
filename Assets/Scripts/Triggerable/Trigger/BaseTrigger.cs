@@ -11,6 +11,8 @@ namespace UnityTemplateProjects.Triggerable
         [SerializeField] private UnityEngine.Object m_TriggerableInstance;
         private ITriggerable m_InstanceCasted;
 
+        protected ITriggerable InstanceCasted => m_InstanceCasted;
+
         protected void OnValidate()
         {
             TryCastInstance();
