@@ -42,7 +42,6 @@ Transform:
   m_Children:
   - {fileID: 805074536249148671}
   - {fileID: 265880356373127490}
-  - {fileID: 7615432262003974096}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -132.91, z: 0}
@@ -107,67 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TriggerableInstance: {fileID: 647190591979895800}
   m_FilterSo: {fileID: 11400000, guid: 72e594935c233be4d838b439a0952312, type: 2}
-  m_RequiredCount: 1
---- !u!1 &3628021842865649389
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7615432262003974096}
-  - component: {fileID: 99150332565981188}
-  - component: {fileID: 1715071382975212616}
-  m_Layer: 0
-  m_Name: PressurePlate (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7615432262003974096
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3628021842865649389}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.22, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 805074534779487885}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &99150332565981188
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3628021842865649389}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.20395, y: 1, z: 2.0961974}
-  m_Center: {x: 0.044172764, y: 0, z: 0.09968507}
---- !u!114 &1715071382975212616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3628021842865649389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 042a55273d514b37a24b28a0fbc8de7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TriggerableInstance: {fileID: 647190591979895800}
-  m_FilterSo: {fileID: 11400000, guid: 72e594935c233be4d838b439a0952312, type: 2}
-  m_RequiredCount: 1
+  m_RequiredCount: 2
 --- !u!1001 &312542998126325895
 PrefabInstance:
   m_ObjectHideFlags: 0
