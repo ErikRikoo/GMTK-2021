@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PressionPlatformBernard
+  m_Name: PressionPlatformKey
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: _EMISSION _METALLICSPECGLOSSMAP _NORMALMAP
   m_LightmapFlags: 2
@@ -21,11 +21,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 8589e7556f371e246b54ffbe051f8d48, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4f0f912c4eff16744a8051d56335a765, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: d477fbf3b603bc64c91c388bf50403be, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4ecbe6a585e636544801d00b6b63da76, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -33,11 +33,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 8589e7556f371e246b54ffbe051f8d48, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4f0f912c4eff16744a8051d56335a765, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 7376b52a102329b4693e27f24a7ee6a4, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6425b23234ac57c44b327cdc01590482, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
