@@ -13,6 +13,11 @@ namespace UnityTemplateProjects.Triggerable
 
         protected ITriggerable InstanceCasted => m_InstanceCasted;
 
+        private void Awake()
+        {
+            TryCastInstance();
+        }
+
         protected void OnValidate()
         {
             TryCastInstance();
