@@ -74,6 +74,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2714186580286826638}
+--- !u!114 &4950415380832752484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2984711731853038123}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bee0a6fa1f5d4f4db481219040523c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  type: 0
+  mesh: {fileID: 0}
+  rectangleSize: {x: 1.39, y: 1.14}
+  circleRadius: 1
+  circleResolution: 6
+  height: 3.35
+  meshScale: 1
+  center: {x: 0, y: 0, z: 0}
+  updateDistance: 0.4
+  isDual: 0
+  cutsAddedGeom: 1
+  updateRotationDistance: 12.33
+  useRotationAndScale: 0
 --- !u!1 &3079521983790821201
 GameObject:
   m_ObjectHideFlags: 0
