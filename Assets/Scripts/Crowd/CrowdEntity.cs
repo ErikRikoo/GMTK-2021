@@ -13,6 +13,7 @@ public class CrowdEntity : MonoBehaviour
     [SerializeField] private float m_AvoidanceDistance;
     [SerializeField] private Animator _animator;
     [SerializeField] private SphereCollider m_TriggerCollider;
+    [SerializeField] private GameObjectValueList m_crowd;
     
     [SerializeField] private bool m_HasReachedGoal = false;
     
@@ -60,6 +61,8 @@ public class CrowdEntity : MonoBehaviour
 
     private void Awake()
     {
+        m_crowd.Add(gameObject);
+
         m_GoalChangedListener = new GoalCHangedListener(this);
         _animatorWalkingHash = Animator.StringToHash("walking");
         _animatorWalkOffsetHash = Animator.StringToHash("WalkCycleOffset");

@@ -145,7 +145,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Goal
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 403f6d3c016c93e4c8d95ec0af014afc,
+        type: 2}
     - target: {fileID: 2476919163814694883, guid: 9fbaf99c831908a43ac993d39cf4862a,
         type: 3}
       propertyPath: _animator
@@ -154,7 +155,7 @@ PrefabInstance:
     - target: {fileID: 2476919163814694883, guid: 9fbaf99c831908a43ac993d39cf4862a,
         type: 3}
       propertyPath: m_AvoidanceDistance
-      value: 1.24
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2476919163814694884, guid: 9fbaf99c831908a43ac993d39cf4862a,
         type: 3}
@@ -189,7 +190,7 @@ PrefabInstance:
     - target: {fileID: 2476919163814694888, guid: 9fbaf99c831908a43ac993d39cf4862a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.981186
+      value: 8.177527
       objectReference: {fileID: 0}
     - target: {fileID: 2476919163814694888, guid: 9fbaf99c831908a43ac993d39cf4862a,
         type: 3}
@@ -199,12 +200,12 @@ PrefabInstance:
     - target: {fileID: 2476919163814694888, guid: 9fbaf99c831908a43ac993d39cf4862a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.6364
+      value: 2.3045406
       objectReference: {fileID: 0}
     - target: {fileID: 2476919163814694888, guid: 9fbaf99c831908a43ac993d39cf4862a,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.91207206
+      value: 0.6699033
       objectReference: {fileID: 0}
     - target: {fileID: 2476919163814694888, guid: 9fbaf99c831908a43ac993d39cf4862a,
         type: 3}
@@ -214,7 +215,7 @@ PrefabInstance:
     - target: {fileID: 2476919163814694888, guid: 9fbaf99c831908a43ac993d39cf4862a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.41002998
+      value: -0.74244845
       objectReference: {fileID: 0}
     - target: {fileID: 2476919163814694888, guid: 9fbaf99c831908a43ac993d39cf4862a,
         type: 3}
@@ -229,7 +230,7 @@ PrefabInstance:
     - target: {fileID: 2476919163814694888, guid: 9fbaf99c831908a43ac993d39cf4862a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 48.413002
+      value: -95.881004
       objectReference: {fileID: 0}
     - target: {fileID: 2476919163814694888, guid: 9fbaf99c831908a43ac993d39cf4862a,
         type: 3}
@@ -239,12 +240,12 @@ PrefabInstance:
     - target: {fileID: 2476919163814694891, guid: 9fbaf99c831908a43ac993d39cf4862a,
         type: 3}
       propertyPath: m_Name
-      value: HermitCrabWithModel Variant
+      value: HermitCrabWithModel (4)
       objectReference: {fileID: 0}
     - target: {fileID: 4230149107492274262, guid: 9fbaf99c831908a43ac993d39cf4862a,
         type: 3}
       propertyPath: m_Radius
-      value: 1.24
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5454611400683562456, guid: 9fbaf99c831908a43ac993d39cf4862a,
         type: 3}
