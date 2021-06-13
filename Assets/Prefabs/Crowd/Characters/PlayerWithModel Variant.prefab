@@ -14372,6 +14372,36 @@ MonoBehaviour:
   _areaCollider: {fileID: 7131364958090430266}
   _linePrefab: {fileID: 1369194502148091794, guid: e011ea692665d564f80e259b7448b47c,
     type: 3}
+--- !u!1 &3846656110901910294
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3249850791520874667}
+  m_Layer: 8
+  m_Name: MouseCLick
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3249850791520874667
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3846656110901910294}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7131364957829147728}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3332608982285386985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14387,7 +14417,7 @@ PrefabInstance:
     - target: {fileID: 5532809113688778930, guid: 8aa2b8f969d67724daaf0f4a670a0fcd,
         type: 3}
       propertyPath: m_Name
-      value: PlayerWithModel
+      value: PlayerWithModel Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5532809113688778932, guid: 8aa2b8f969d67724daaf0f4a670a0fcd,
         type: 3}
@@ -14468,6 +14498,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5532809113688778939, guid: 8aa2b8f969d67724daaf0f4a670a0fcd,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5532809113688778939, guid: 8aa2b8f969d67724daaf0f4a670a0fcd,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
+      value: d34306bf-a2b4-4457-bc08-577549b6750d
+      objectReference: {fileID: 0}
+    - target: {fileID: 5532809113688778939, guid: 8aa2b8f969d67724daaf0f4a670a0fcd,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
+      value: Main/Click[/Mouse/leftButton]
       objectReference: {fileID: 0}
     - target: {fileID: 5532809113945474003, guid: 8aa2b8f969d67724daaf0f4a670a0fcd,
         type: 3}
